@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floko</title>
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      
+  <link rel="stylesheet" href="/assets/index-98183f63.css">
+</head>
+<body class="bg-black">
+    <!-- header -->
+    <header class="px-32 mt-11  ">
+	<div class="container flex justify-between items-center h-16 mx-auto text-white">
+	<img class="h-[34px] w-[108px]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAAAiCAYAAABMUXsMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAXNSURBVHgB7Zz9VeM4EMAHHv9fOlhfBbAVnKlguQrWVwGhApIKCBU4VABUEHewbAUxFcBVMKtZK6wjpJmR7CQm5PeeX+Loc6TxaPThHCHiDAD+gnR+Hh0dzVY3Jr9L83EG6dQmv2ko0OSfm4/v0C9TU2bN5W3C/4MdYepF7XkZCL4ydXuFIWMEmGA3Cie/JXajEOpbYP/kUt6wQ6h+TN2/wMA5NhdZodQngazOfHWDjYJkkE5trgc4sFccW1N7C2m4w9o1dONu8Kb/QDTH9jPFmm3Cis3hwN7xW8ms9biDOFwr1tUZr8j5hgN7x0nrO1mzS2W62lzV6gab2U8O3ZhCd1LzqOHAxnhTMjuFJ6f7QpHuwbE6knJSXE4BXvuwYiaPCQwM06Yj8zGyt68f1efsIseJc08TAI2S3bYKz8xHIcSftv23fcZ2RmGub9CsF46ccOqcJ3M9wvuHdRP1oTpwfUpuSuVJt5LjH2hGqZAcdN1GyWESL5CndOKXKJNBT+AG17K65E2dYq5rc71gHKXUPpi4Tkb5Ir9uSWGjbcmhFQjbGSmE+F049AgOUMlM8Bl2W4RemuuCyT9VyUqh3MyJr+lPDlLMMSgbexHIpNR2SkiQruDAlAwbBYt96kN8D5QRrWTm90uhrLETv6uCtZHXSzEsVObEWwqFLaBncEBKhk3H9KVgK3JPOVFKZuvFUXriL7Ff3h6YE1/jkSNoIlWwviyxto6FusXX1J2EJFDY93ToY12OHqIRE75yjmt7n4FnMuBQGjm+ps5CsfGxuIe7NteV89s1yH1ZQZwcM1OXR1YOE+HC0czcCV9gNwpIAPvbIC9i8k6oBzXyyJOOrMZESDtx0qgtmbm/EfLOIvIm7n1y2LSSHLI/jn9M6DKyYhJLSASHo2Q/mLwnCjm4DqIheKRs7y8RbTP21OOeiT9TyFFo5QhlMLaRC+f3ErtRQCI4ACVD3udRP0DIjwZ5K56oZCj7VaWn/BETf4nKSZsgx/hYSD8315OzEZ6BvPjKUUNrS+qDwi1uxvihd4ll+CA/LAuE1fDeDyNyCBPjs3K7Oaesklmn7dz5uetxnn3YCM+YsCfQ8wBpZayBzZIBF/884IBzJ5gfQYndMQg5+PkJyBm8JbZWLPYJc+ljIzxEFRG3hnROmTC1klHbmjatwa8gp6AjN9eECb9iHuosnCy6fWrwK+1IVDKHHPhpq8R8k1bM5H0OO2YHG+Cccz5vv38RyQvEEZI7WsmkoZLMP2dmKzjQNxWERxdahpru2j1RKxk2e2uZEO3qkxw8fA4F0GzPtMEz6MkCv9egYwLNMJV5wmjUuTfX10Bazur+DYycHkL+XS3NLttUwFfqM51srZkw9ZCNni2kFv+DDuoT7nU92lu9CYRx/iM3KVjD+uohN0qvZIoj2lvdQtoxFRMWcwydi8vNPNewszuu/ccBheaU7BvoyZmwnxADNicOvAt3sCVwABvk2CxichvjuaIsbkEXcf1IVa4pC/ldiBf0LK4iL4e4koDyInAeM1zSE0OaX3mCNrksMTgUVr1EZrXchnGb2Kmux7/AzPKoXp7fOQtIcgSHTSsH+XxZIErtO3Ur4nmqltjzmTGh/J1bMhtXc8ynxOagwZmNT99vFOkypyyVJbNxx0LeN058ySqH5LhWpCugQ2cs2hWALYLDOk8mdWgKM085aiWz8RdCGblW7g500wtcPwaUwRbB4Z2MnWN//AiUEatkkpV9559h9/9EabPE1umLKJ9shRlnaeZDY//jZ38h18hfQD8z6woilj84bJ9wfvI7/8y+TtiHb01++3kvOx9W83PYMjjct5UKTDvCLL58gZGWrJXuXij7ukc5CO9BzWR6zSyu3EEqmU1Pw9RY2UmkXBNNO2K6kmmc+jyQTqtslD8pVxaqxxF8MHCDf1TXZ97YTP0z+HMWnv5okLZpamjO6KlPa9gODO0b33J5If8HesQz9+a9IIdqieIXxjKwf/a2IwMAAAAASUVORK5CYII=" alt="">
+		<ul class="items-stretch hidden space-x-3 lg:flex">
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent ">Speacilites</a>
+			</li>
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">For Business</a>
+			</li>
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">For Individuals</a>
+			</li>
+			<li class="flex">
+				<a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">For Coach</a>
+			</li>
+		</ul>
+		<div class="items-center flex hidden items-center lg:flex">
+			 <img class="flag" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGcSURBVHgBlVJLSwJRFD5nvBP0EMeSFhU1RVlZ0RQElQXtgmjTD4jatC1dRgvrH7hpF5S0jojaBdWqKEEGgmwjDYaphDi+RWe8jYYglY8+uI/vu+e758A5CBVYWrJx6x+eHZOS2kRAvqhRCiIiFdWCerAmiRL8xN7u0caCdTt6e+2muVj895JjUUqprRyPxc1uP9yJROJOztAGg+47sDTloBqygfDmqu/JRWZnbTzLsvvJRAYYRDBvb8GM0F/ViIQ46dDABbFahx0P9y/c/LwFHh+98H52BfrLPNQAlw4EbOTV6xfm5kYgGIqA2dwDJnM79A6YahmBIboN0tlpFFSVQrnU7GcEUmwO6oAnC4vjpZtlrA8I0UFfMgyQz9QzAlnuQIkqCv9NVYBWo3Yaa5pYg14kvqNTV3N3lwP+ATWRFFFrKhd79r4pqTTXiIm0tsiGidEpgojyOT9tN46NHDdiTAdDByueGwnLQnGc0v6AAxjmz8xN+jaZGPR2LdFJkWPl4zkv8Azq9jV5UuuMUPoQqKRxV6GgOLUhl8uxXyRFpeZobWerAAAAAElFTkSuQmCC" alt="" />
+        <p class="mr-10">EN <i class="arrow down"></i></p>
+			<button class=" px-8 py-3 rounded-[23px] bg-[#2C2C2B] ">Log/Sign In</button>
+		</div>
+		
+	</div>
+   </header>
+    <!-- header end -->
+    <!-- top content -->
+    <div class="flex items-center justify-center text-center">
+       <section class="top-content">
+      <div style="
+            font-family: Neue Montreal;
+            font-size: 120px;
+            font-weight: 700;
+            line-height: 130px;
+            letter-spacing: 0em;
+          ">
+        <span style="color: #f0b38c">GROW</span>
+        <br />
+        <div class="flex">
+          <img style="padding-bottom: 10px; width: 170px; height: 170px" src="/assets/left-32757bde.png" alt="" />
+          <span style="color: #ffff">FASTER</span>
+          <img style="padding-bottom: 10px; width: 170px; height: 170px" src="/assets/right-6de4838e.png" alt="" />
+        </div>
+
+        <p> WITH A <span style="color: #afd7b3">COACH</span> </p>
+      </div>
+      <!-- text -->
+      <p>
+        Work with a world-class coach to grow as a leader, find career <br>
+        clarity, or accelerate your job search.
+      </p>
+
+      <!-- button -->
+      <div class="text-black mt-10 mb-5">
+       <button class=" px-8 py-3 mr-6 rounded-[23px] bg-[#AFD7B3] ">Find My Coach</button>
+       <button class=" px-8 py-3 rounded-[23px] bg-[#ffff] ">Learn More</button>
+      </div>
+      <!-- rating -->
+      <div style="
+            font-family: Neue Montreal;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0em;
+            text-align: center;
+            margin-top: 20px;
+          ">
+        <p>
+          <i class="fa-solid fa-star" style="color: gold"></i> 4.9 Average
+          Session Rating
+        </p>
+      </div>
+    </section>
+    </div>
+    <!-- top content end -->
+
+    <!-- 2nd content -->
+   <div class="">
+  
+      <div class="bg-[#2B2B2B
+] h-[182px]">
+
+</div>
+       <section class="sec-two ml-8" style="margin-top:70px; color: white;">
+      <div style="border: 1px solid;
+  border-image: linear-gradient(to right, white, black) 1;
+  margin-bottom: 30px;"></div>
+      <div class="">
+        <span>Career Coaching <i class="fa-solid fa-star" style="color: #AFD7B3"></i></span>
+        <span>Life Coaching <i class="fa-solid fa-star" style="color: #506AF1 "></i></span>
+        <span>Job Search Coaching <i class="fa-solid fa-star" style="color: #FBC5C4"></i></span>
+        <span>Leadership Coaching <i class="fa-solid fa-star" style="color: #F0B38C"></i></span>
+
+      </div>
+
+      </div>
+      <div class="ml-12" style="border: 1px solid;
+  border-image: linear-gradient(to right, white, black) 1;
+  margin-top: 30px;"></div>
+    </section>
+   </div>
+    <!-- 2nd content end -->
+
+   
+<!-- event -->
+ <div class="flex justify-evenly">
+  
+    <div class="mt-[142px] w-[500px]" >
+      <h1 class="text-white text-7xl mb-[32px]">Events You'll <br> Remember</h1>
+      <p class="text-white">We are a turnkey event agency in New York.</p>
+      <div class="text-[#BFBFBF] mt-[32px]">
+          <p>EventiX is a leading event management company in the United States. We hold the highest quality events pushing the boundaries of the industry standards.</p>
+   <p class="mt-[16px]">   We are passionate about creating integrated experiences that bring cohesive connection between brands and targeted audience. Our team of experienced and talented event managers strive to deliver stellar results.</p>
+      </div>
+    </div>
+    <div class="column h-[505px] w-[570px] " style="margin-top: 109px;">
+      <img class="absolute" src="/assets/Rectangle 8-f7949714.png" alt="">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAABbCAYAAAA7ke0dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIfSURBVHgB7duxihNBAMfhyUbwQsiZJgGLpEpnZ+dz+XS+gG+Q7gqJncWChhRHsrvuihEV4Q7J/qvvg4HZYesfwzAz2Ww27wsAMVUBIEp4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIEx4AcKEFyBMeAHChBcgTHgBwoQXIKzquu6xABAz7HiFFyBoCO/nAkBM1TTNlwJATDWfzx8KADHTuq4fl8vlpp+/KgCM7nqdbF8AiPgR3sPhsO+67msBYHS/HlC0bfuhADC66XVyPB6/LRaLu8lk8roAMJo/ngzPZrOPfXhdLwMY0fT3j7qum9Vq9elyuez6AN8VAG5u+vfCcL1svV4/iC/AOKb/WvwZ3/35fH7hzBfgtiZP/bDdbt+0bfuuD7AHFgA38GR4r4YAN03ztqqqdQHgvz07vFe73e7+dDoN57+bftwPO+F+vCwAPMt3r0JFfFBUygkAAAAASUVORK5CYII=" class="relative top-[420px]" alt="">
+      
+    </div>
+  </div>
+  <!-- talent -->
+  <div>
+     <div>
+          <p class="text-white text-7xl mb-[32px] text-center mt-[140px]">Meet The Talented <br> Speakers</p>
+     </div>
+     <!-- slider -->
+     <div class="mx-[135px]">
+        
+        <div class="flex items-center justify-center w-full h-full py-24  sm:py-8 px-4">
+            <div class="w-full relative flex items-center justify-center">
+                <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-white cursor-pointer" id="prev">
+                    <svg class="dark:text-white" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                    <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto bg-[#B8B9EE]">
+                            <img src="/assets/ben-parker-OhKElOkQ3RE-unsplash_ccexpress-052217ae.png" alt="black chair and white table" class="object-cover object-center w-full" />
+                            <div class="bg-gray-800 bg-opacity-20 absolute w-full h-full p-6">
+                                <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"></h2>
+                                <div class="flex h-full items-end pb-6">
+                                      <div class="flex h-full items-end pb-6 text-center">
+                                    <div>
+                                      <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white mb-2">Duke Stump  </h3>
+                                    <p>Game-Changing CMO & Founder, Nonfire with Soul.</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="flex flex-shrink-0 relative w-full sm:w-auto bg-[#FFCF96]">
+                            <img src="/assets/photo-attractive-ginger-man-with-satisfied-expression-has-thick-beard-removebg-5dd5b4dd.png" alt="sitting area" class="object-cover object-center w-full h-[541px] " />
+                            <div class="bg-gray-800 bg-opacity-10 absolute w-full h-full p-6">
+                               
+                                <div class="flex h-full items-end pb-6 text-center">
+                                    <div>
+                                      <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white mb-2">Jelani Memory  </h3>
+                                    <p>Global Authority on Privacy & Security. Founder, Global Privacy by Design.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-shrink-0 relative w-full sm:w-auto bg-[#70D18C]">
+                            <img src="/assets/christian-buehner-mBVlFd3U2ZI-unsplash_ccexpress-5c516bf3.png" alt="sitting area" class="object-cover object-center w-full " />
+                            <div class="bg-gray-800 bg-opacity-20 absolute w-full h-full p-6">
+                                <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"></h2>
+                                <div class="flex h-full items-end pb-6 text-center">
+                                    <div>
+                                      <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white mb-2">Christa Couture  </h3>
+                                    <p>Advocate, Builder, Changemaker, Youngest Developer in the USA.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button aria-label="slide forward" class="absolute z-30  right-0 mr-10 focus:outline-none focus:bg-white focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+                    <svg class="dark:text-white" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+      
+        
+        
+    
+     </div>
+     <!-- slider end -->
+  </div>
+  <!-- talent end -->
+
+  <!-- schedule -->
+      <div class="lg:ml-40 mt-10 grid grid-cols-1 lg:grid-cols-3 mt-[150px] schedule">
+        <div class="">
+            <h1 class="text-6xl font-bold text-white">Schedule</h1>
+            <p class="text-white">A Representation to the event planning <br> of the design conference</p>
+            <button class="bg-gray-500 text-white font-bold py-2 px-8 border-none border-blue-700 rounded-full mt-3">
+                DOWNLOAD SCHEDULE
+            </button>
+        </div>
+        <div class="col-span-2">
+            <div class="grid grid-cols-3">
+                <div>
+                    <p class="font-semibold text-white">Day One</p>
+                    <p class="font-semibold mt-3 text-white mb-4">05 April, Tuesday</p>
+                    <hr style="height: 5px;background: white;">
+                </div>
+                <div class="">
+                    <p class="color">Day Second</p>
+                    <p class="color mt-3 mb-4">05 April, Tuesday</p>
+                    <hr>
+                </div>
+                <div>
+                    <p class="color">Day Third</p>
+                    <p class="color mt-3 mb-4">05 April, Tuesday</p>
+                    <hr class="mr-5">
+                </div>
+            </div>
+            <div class="mt-5 grid grid-cols-3">
+                <div>
+                    <h1 class="text-white">8.00 AM - 9.00 AM</h1>
+                    <h1 class="text-white mt-20">8.00 AM - 9.00 AM</h1>
+                    <h1 class="text-white mt-52">8.00 AM - 9.00 AM</h1>
+                    <h1 class="text-white mt-28">8.00 AM - 9.00 AM</h1>
+                    <h1 class="text-white mt-3">8.00 AM - 9.00 AM</h1>
+                </div>
+                <div>
+                    <ul class="text-white">
+                        <li><p class="text-xl ml-5">Registration and Cofee</p>
+                            <p class="ml-5">Register Your Personal data in customer service and take cofee before entering the room.</p>
+                        </li>
+                        <li>
+                            <p class="text-xl ml-5">Plan and Conduct User Research</p>
+                            <p class="ml-5">Mary early researcher are challegrged by aspect of the design and implemantation of research studies as well as effective dissemunation.</p>
+                        </li>
+                        <li>
+                            <p class="text-xl ml-5">Q&A for Speaker</p>
+                            <p class="ml-5">Register Your Personal data in customer service and take cofee before entering the room.</p>
+                        </li>
+                        <li><p class="ml-5">Lunch Break</p></li>
+                        <li>
+                            <p class="text-xl ml-5">Research for right thing</p>
+                            <p class="ml-5">Research encompasses a cariety of investigative methods used to add context and insight to the design process.</p>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- schedule end -->
+
+  <!-- tickets -->
+  <div>
+    <p class="text-white text-7xl mb-[32px] text-center mt-[140px]">Pricing Tickets</p>
+    <!-- price table -->
+    <div class="flex justify-evenly">
+         <section class="py-20  ">
+	<div class="border-2 border-[#272727] rounded-3xl w-[370px] h-[628px] bg-[#383838]">
+    <div class="text-white pl-[38px] pt-[26px] bg-black pb-[28px]">
+      <p class="text-[36px] font-semibold">Standard</p>
+      <p class="text-[16px]">$20/mo per member</p>
+    </div>
+    <div>
+     <ul class="flex-1 mb-6 pl-[38px] my-[78px]">
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-whitw">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>One day pas access all lecture</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-whitw">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Lunch and snack</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-whitw">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Free T-Shirt</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-whitw">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Front Seat</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-whitw">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Certificate</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5]">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-whitw">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>One day pas access all lecture</span>
+						</li>
+					</ul>
+
+          <button type="button" class="px-8 py-3 mx-[32px] font-semibold rounded-full bg-black text-[white]">GET YOUR TICKET <i class="ml-10 fa-solid fa-arrow-right"></i></button>
+          
+    </div>
+
+  </div>
+    </section>
+    <section class="py-20  ">
+	<div class="border-2 border-[#272727] rounded-3xl w-[370px] h-[628px] bg-[#383838]">
+    <div class="text-white pl-[38px] pt-[26px] bg-[#F36B7F] rounded-md pb-[28px]">
+      <p class="text-[36px] font-semibold">Standard</p>
+      <p class="text-[16px]">$20/mo per member</p>
+    </div>
+    <div>
+     <ul class="flex-1 mb-6 pl-[38px] my-[78px]">
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#F36B7F]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>One day pas access all lecture</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#F36B7F]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Lunch and snack</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#F36B7F]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Free T-Shirt</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#F36B7F]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Front Seat</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#F36B7F]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Certificate</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5]">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#F36B7F]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>One day pas access all lecture</span>
+						</li>
+					</ul>
+
+          <button type="button" class="px-8 py-3 mx-[32px] font-semibold rounded-full bg-black text-[white]">GET YOUR TICKET <i class="ml-10 fa-solid fa-arrow-right"></i></button>
+          
+    </div>
+
+  </div>
+    </section>
+    <section class="py-20  ">
+	<div class="border-2 border-[#272727] rounded-3xl w-[370px] h-[628px] bg-[#383838]">
+    <div class="text-white pl-[38px] pt-[26px] bg-[#70D18C] rounded-md pb-[28px]">
+      <p class="text-[36px] font-semibold">Standard</p>
+      <p class="text-[16px]">$20/mo per member</p>
+    </div>
+    <div>
+     <ul class="flex-1 mb-6 pl-[38px] my-[78px]">
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#70D18C]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>One day pas access all lecture</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#70D18C]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Lunch and snack</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#70D18C]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Free T-Shirt</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#70D18C]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Front Seat</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5] mb-8">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#70D18C]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>Certificate</span>
+						</li>
+					<li class="flex mb-2 space-x-2 text-[#E5E5E5]">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 dark:text-[#70D18C]">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							<span>One day pas access all lecture</span>
+						</li>
+					</ul>
+
+          <button type="button" class="px-8 py-3 mx-[32px] font-semibold rounded-full bg-black text-[white]">GET YOUR TICKET <i class="ml-10 fa-solid fa-arrow-right"></i></button>
+          
+    </div>
+
+  </div>
+    </section>
+    </div>
+
+    <!-- price table end -->
+  </div>
+  <!-- tickets end -->
+
+
+  <!-- slider part 2 -->
+  <!-- component -->
+<!-- Display Container (not part of component) START -->
+  <div class="mt-10 mb-0 mx-auto   bg-black w-[1170px] h-[584px]">
+    
+    <!-- Carousel Body -->
+   <div class="bg-[#272727] p-[30px] border-0  rounded-md">
+     <div class="relative rounded-lg block md:flex items-center  shadow-xl" style="min-height: 19rem;">
+      <div class="bg-[#F36B7F]">
+        <img class="h-[305px] p-4 rounded-md" src="/assets/indor-0a7490d5.png" alt="">
+      </div>
+      
+      <div class="w-full md:w-3/5 h-full flex items-center bg-[#272727] rounded-lg">
+        <div class="p-12 md:pr-24 md:pl-16 md:py-12">
+          <p class=" text-white text-[28px]"> Jonathan Kennedy</p>
+          <p class="text-[#BFBFBF] text-[16px]">Founder of Producthunt</p>
+          <p>"We just want to say thank you to Floko and to their highly professional staff! They have supported us throughout all the event. Everything was well organized! The event's turned to be a great success! You deserve the highest grade!"</p>
+      
+        </div>
+        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+       
+        </svg>
+      </div>
+      <button class="absolute top-0 mt-32 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-6 focus:outline-none focus:shadow-outline">
+        <span class="block" style="transform: scale(-1);">&#x279c;</span>
+      </button>
+      <button class="absolute top-0 mt-32 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-6 focus:outline-none focus:shadow-outline">
+        <span class="block" style="transform: scale(1);">&#x279c;</span>
+      </button>
+    </div>
+   </div>
+    
+    <!-- Carousel Tabs -->
+    <div class="flex items-center pt-5 justify-between">
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/kickstarter.svg" alt="" style="max-height: 60px;"></button>
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/slack.svg" alt="" style="max-height: 60px;"></button>
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/glossier.svg" alt="" style="max-height: 60px;"></button>
+      <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/charity_water.svg" alt="" style="max-height: 60px;"></button>
+      <button class="px-2 opacity-100 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/missguided.svg" alt="" style="max-height: 60px;"></button>
+    </div>
+    
+  </div>
+  <!-- Display Container (not part of component) END -->
+  <!-- slider part 2 end -->
+
+  <!-- footer -->
+    <div class="bg-black">
+  <div class=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 mb-6">
+    <div class="flex j ">
+      <div class="flex gap-20 ">
+        <div class="mr-[250px]">
+          <img src="data:image/png;base64,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" alt="">
+        </div>
+      
+        <div>
+          <p class="font-medium tracking-wide text-white text-[18px]">Navigate</p>
+          <ul class="mt-2 space-y-2">
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Media</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Brochure</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Nonprofit</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Educational</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Projects</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-medium tracking-wide text-gray-300 text-white text-[18px]">Business</p>
+          <ul class="mt-2 space-y-2">
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Infopreneur</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Personal</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Wiki</a>
+            </li>
+            <li>
+              <a href="/" class="text-[#BFBFBF] transition-colors duration-300 hover:text-deep-purple-accent-200">Forum</a>
+            </li>
+          </ul>
+        </div>
+          <div class="md:max-w-md lg:col-span-2">
+        <span class="text-base font-medium tracking-wide text-white">Newsletter</span>
+        <p class="mt-4 text-sm text-gray-500">
+          Sign up to be first to receive the latest stories inspiring us, case studies, and industry news.
+        </p>
+       <form class="w-full max-w-sm">
+  <div class=" items-center border-b border-[#BFBFBF] py-2">
+   
+   
+    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Your name" aria-label="Full name">
+    
+   
+  </div>
+</form>
+       <form class="w-full max-w-sm">
+  <div class=" items-center border-b border-[#BFBFBF] py-2">
+   
+   
+    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Email address" aria-label="Full name">
+    
+   
+  </div>
+</form>
+<button class=" px-8 w-[370px] py-3 rounded-[23px] bg-[#2C2C2B] mt-6">SUBSCRIBE</button>
+        
+      </div>
+      </div>
+    
+    </div>
+    <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row mt-[50px]">
+      <p class="text-sm text-white">
+         © Created by uihut.com
+      </p>
+      <div class="flex items-center mt-4 space-x-4 sm:mt-0">
+        <a href="/" class="text-white transition-colors duration-300 hover:text-teal-accent-400">
+          <div class="flex items-center gap-2">
+             <i class="fa-brands fa-twitter"></i>
+            <p>Twitter
+           
+          </p>
+          </div>
+         
+        </a>
+        <a href="/" class="text-white transition-colors duration-300 hover:text-teal-accent-400">
+          <div class="flex items-center gap-2">
+             <i class="fa-brands fa-linkedin"></i>
+            <p>LinkedIn
+           
+          </p>
+          </div>
+        </a>
+        <a href="/" class="text-white transition-colors duration-300 hover:text-teal-accent-400">
+<div class="flex items-center gap-2">
+             <i class="fa-brands fa-instagram"></i>
+            <p>Instagram
+           
+          </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- footer -->
+  <script src="script.js"></script>
+</body>
+</html>
