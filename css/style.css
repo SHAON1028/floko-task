@@ -1,7 +1,21 @@
+body{
+  background: black;
+}
 .top-content {
   height: 390px;
   width: 844px;
   margin-top: 96px;
   text-align: center;
   color: white;
+}
+.sec-two {
+  padding-top: 30px;
+  padding-left: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+}
+.sec-two span {
+  margin-right: 28px;
 }
