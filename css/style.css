@@ -23,18 +23,18 @@ body{
 .date{
   background-image: url(/images/date.png);
 }
-       ul {
+      .schedule ul {
   list-style-type: none;
 }
 
-li {
+.schedule ul li {
   position: relative;
   margin: 0;
   padding-bottom: 1em;
   padding-left: 20px;
 }
 
-li:before {
+.schedule ul li:before {
   content: '';
   background-color: #FFCF96;
   position: absolute;
@@ -44,7 +44,7 @@ li:before {
   width: 3px;
 }
 
-li:after {
+.schedule ul li:after {
   content: '';
   background-color: #FFCF96;
   border-radius: 50px;
