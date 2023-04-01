@@ -1,5 +1,6 @@
 body{
   background: black;
+  color: white;
 }
 .top-content {
   height: 390px;
@@ -21,4 +22,35 @@ body{
 }
 .date{
   background-image: url(/images/date.png);
+}
+       ul {
+  list-style-type: none;
+}
+
+li {
+  position: relative;
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+
+li:before {
+  content: '';
+  background-color: #FFCF96;
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  left: 6px;
+  width: 3px;
+}
+
+li:after {
+  content: '';
+  background-color: #FFCF96;
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  height: 12px;
+  width: 12px;
 }
