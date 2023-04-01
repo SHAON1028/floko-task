@@ -19,3 +19,6 @@ body{
 .sec-two span {
   margin-right: 28px;
 }
+.date{
+  background-image: url(/images/date.png);
+}
